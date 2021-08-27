@@ -25,10 +25,10 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: npm install nativefier -g
 
-      - name: Compiling to Linux x64
+      - run: nativefier -p linux -a x64 --icon sources/qvapay.png -n QvaPay $QVAPAY_LINK
+        name: Compiling to Linux x64
         env:
           QVAPAY_LINK: ${{ secrets.QVAPAY_LINK }}
-        run: nativefier -p linux -a x64 --icon sources/qvapay.png -n QvaPay $QVAPAY_LINK
       - run: cd *-linux-x64 & chmod +x QvaPay
 
       - name: Release
