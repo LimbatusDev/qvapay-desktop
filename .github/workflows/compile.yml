@@ -29,9 +29,14 @@ jobs:
       - name: Compilling to Linux
         env:
           QVAPAY_LINK: ${{ secrets.QVAPAY_LINK }}
-        run: nativefier -p linux -a x64 --icon sources/qvapay.png -n QvaPay $QVAPAY_LINK
+        run: nativefier -p linux -a x64 --icon sources/qvapay.png -n QvaPay $QVAPAY_LINK --background-color "#5e72e4"
 
       - name: Compress all releases files
+        # tar options:
+        # c Create new file
+        # z Filter the archive through gzip
+        # v verbose output
+        # f Use archive file
         run: tar -czvf qvapay-linux-x64.tar.gz QvaPay-linux-x64 LICENSE installer.sh sources qvapay.desktop
 
       - name: Release

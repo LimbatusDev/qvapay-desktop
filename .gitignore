@@ -1,1 +1,5 @@
-.idea
+# IDE config
+.idea/
+
+# build
+*-linux-x64/
