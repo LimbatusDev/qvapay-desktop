@@ -1,4 +1,6 @@
 # QvaPay Desktop
+![build](https://github.com/LimbatusDev/qvapay-desktop/workflows/Build/badge.svg)
+
 
 QvaPay para computadora. Esta aplicación no es más que la página de [QvaPay](https://qvapay.com/register/ragnarok)
 basada en Electrón gracias a la tecnología de NodeJS y nativefier.
