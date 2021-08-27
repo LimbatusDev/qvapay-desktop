@@ -9,14 +9,25 @@
 QvaPay para computadora. Esta aplicación no es más que la página de [QvaPay](https://qvapay.com/register/ragnarok)
 basada en Electrón gracias a la tecnología de NodeJS y nativefier.
 
+## Linux
+Este programa fue compilado en Ubuntu 18.04
 
-# Instalar en Linux
+# Usar de forma portable
+Para usarlo portable solo tienes que darle permisos de ejecución al fichero QvaPay-linux-x64/QvaPay:
+
+    chmod +x QvaPay-linux-x64/QvaPay
+Ejecutar portable:
+
+    ./QvaPay-linux-x64/QvaPay
+
+# Instalar en el sistema
 - Descargar la última versión
 - Descomprimirlo
 - Dar permisos de ejecución al instalador: `chmod +x installer.sh`
 - Ejecutar el instalador: `./installer.sh`
 - Introducir la contraseña si es necesario.
 - Buscar el programa en el menú inicio
+- Puedes borrar la carpeta que descargaste
 
 # Instalar para Windows
 > Todavía no soportado
