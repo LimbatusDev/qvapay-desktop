@@ -11,6 +11,9 @@ jobs:
     name: Build Linux Release
     runs-on: ubuntu-latest
 
+    outputs:
+      upload_url: ${{ steps.create_release.outputs.upload_url }}
+
     strategy:
       matrix:
         node-version: [ 14.x ]
@@ -40,9 +43,46 @@ jobs:
         run: tar -czvf qvapay-linux-x64.tar.gz QvaPay-linux-x64 LICENSE installer.sh sources qvapay.desktop
 
       - name: Release
+        id: create_release
         uses: softprops/action-gh-release@v1
-        if: startsWith(github.ref, 'refs/tags/')
         with:
+          upload_url: ${{ needs.build-linux.outputs.upload_url }}
           files: |
             LICENSE
             qvapay-linux-x64.tar.gz
+
+  build-windows:
+    name: Build Windows Release
+    runs-on: windows-latest
+    needs:
+      - build-linux
+
+    strategy:
+      matrix:
+        node-version: [ 14.x ]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Installing nativefier
+        run: npm install nativefier -g
+
+      - name: Compilling to Windows
+        env:
+          QVAPAY_LINK: ${{ secrets.QVAPAY_LINK }}
+        run: nativefier -p windows -a x64 --icon sources/qvapay.png -n QvaPay $QVAPAY_LINK --background-color "#5e72e4"
+
+      - name: Compress all releases files
+        run: tar.exe -a -c -f qvapay-windows-x64.tar.gz QvaPay-win32-x64 LICENSE
+
+      - name: Release
+        id: create_release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            qvapay-windows-x64.tar.gz
