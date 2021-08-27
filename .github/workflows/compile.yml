@@ -28,7 +28,7 @@ jobs:
       - name: Compiling to Linux x64
         env:
           QVAPAY_LINK: ${{ secrets.QVAPAY_LINK }}
-      - run: nativefier -p linux -a x64 --icon sources/qvapay.png -n QvaPay $QVAPAY_LINK
+        run: nativefier -p linux -a x64 --icon sources/qvapay.png -n QvaPay $QVAPAY_LINK
       - run: cd *-linux-x64 & chmod +x QvaPay
 
       - name: Release
