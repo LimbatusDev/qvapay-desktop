@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Application
+Terminal=false
+Exec=/opt/QvaPay-linux-x64/QvaPay
+Name=QvaPay
+Icon=/opt/QvaPay-linux-x64/qvapay.png
+Comment=Your digital account in dollars.
+Categories=Money;Cryptocurrency;
