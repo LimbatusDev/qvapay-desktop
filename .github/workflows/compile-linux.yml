@@ -29,7 +29,7 @@ jobs:
       - name: Installing nativefier
         run: npm install nativefier -g
 
-      - name: Compilling to Linux
+      - name: Compiling to Linux
         env:
           QVAPAY_LINK: ${{ secrets.QVAPAY_LINK }}
         run: nativefier -p linux -a x64 --icon sources/qvapay.png -n QvaPay $QVAPAY_LINK --background-color "#5e72e4"

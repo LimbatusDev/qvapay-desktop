@@ -26,13 +26,13 @@ jobs:
       - name: Installing nativefier
         run: npm install nativefier -g
 
-      - name: Compilling to Windows
+      - name: Compiling to Windows
         env:
           QVAPAY_LINK: ${{ secrets.QVAPAY_LINK }}
-        run: nativefier -p windows -a x64 --icon sources/qvapay.png -n QvaPay $QVAPAY_LINK --background-color "#5e72e4"
+        run: nativefier $QVAPAY_LINK QvaPay-win-x64 -p windows -a x64 --icon sources/qvapay.ico -n QvaPay --background-color "#5e72e4"
 
       - name: Compress all releases files
-        run: tar.exe -a -c -f qvapay-windows-x64.tar.gz QvaPay-win32-x64 LICENSE
+        run: tar.exe -a -c -f qvapay-windows-x64.zip QvaPay-win-x64 LICENSE
 
       - name: Release
         id: create_release
