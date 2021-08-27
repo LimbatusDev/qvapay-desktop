@@ -39,4 +39,4 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: |
-            qvapay-windows-x64.tar.gz
+            qvapay-windows-x64.zip
