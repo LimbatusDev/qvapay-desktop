@@ -1,6 +1,9 @@
 # QvaPay Desktop
 ![build](https://github.com/LimbatusDev/qvapay-desktop/workflows/Build/badge.svg)
-![Descargas](https://img.shields.io/github/downloads/LimbatusDev/qvapay-desktop/total?label=Descargas&style=flat-square)
+![GitHub Release Date](https://img.shields.io/github/release-date/LimbatusDev/qvapay-desktop?style=flat-square)
+![GitHub](https://img.shields.io/github/license/LimbatusDev/qvapay-desktop?style=flat-square)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/LimbatusDev/qvapay-desktop)
+![GitHub last commit](https://img.shields.io/github/last-commit/LimbatusDev/qvapay-desktop?style=flat-square)
 
 
 QvaPay para computadora. Esta aplicación no es más que la página de [QvaPay](https://qvapay.com/register/ragnarok)
