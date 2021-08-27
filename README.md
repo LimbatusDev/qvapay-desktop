@@ -1,5 +1,6 @@
 # QvaPay Desktop
-![build](https://github.com/LimbatusDev/qvapay-desktop/workflows/Build/badge.svg)
+![build Linux](https://github.com/LimbatusDev/qvapay-desktop/workflows/Build-linux/badge.svg)
+![build Windows](https://github.com/LimbatusDev/qvapay-desktop/workflows/Build-win/badge.svg)
 ![GitHub Release Date](https://img.shields.io/github/release-date/LimbatusDev/qvapay-desktop?style=flat-square)
 ![GitHub](https://img.shields.io/github/license/LimbatusDev/qvapay-desktop?style=flat-square)
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/LimbatusDev/qvapay-desktop)
@@ -8,6 +9,7 @@
 
 QvaPay para computadora. Esta aplicación no es más que la página de [QvaPay](https://qvapay.com/register/ragnarok)
 basada en Electrón gracias a la tecnología de NodeJS y nativefier.
+La arquitectura de compilación que se usó es x64.
 
 ## Linux
 Este programa fue compilado en Ubuntu 18.04
