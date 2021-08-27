@@ -31,10 +31,13 @@ jobs:
           QVAPAY_LINK: ${{ secrets.QVAPAY_LINK }}
         run: nativefier -p linux -a x64 --icon sources/qvapay.png -n QvaPay $QVAPAY_LINK
 
+      - name: Compress all releases files
+        run: tar -czvf qvapay-linux-x64.tar.gz QvaPay-linux-x64 LICENSE installer.sh sources qvapay.desktop
+
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: |
             LICENSE
-            installer.sh
+            qvapay-linux-x64.tar.gz
